@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Q2 Seatwork 1, ICT 10</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            color: #1e293b;
+            min-height: 100vh;
+        }
+
+        header {
+            background: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            color: #cbd5e1;
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        .card h2 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .description {
+            text-align: center;
+            color: #64748b;
+            margin-bottom: 30px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        select {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 16px;
+            background: white;
+            margin-bottom: 20px;
+        }
+
+        button {
+            width: 100%;
+            padding: 13px;
+            border: none;
+            border-radius: 8px;
+            background: #2563eb;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+
+        .result {
+            margin-top: 30px;
+            padding: 25px;
+            text-align: center;
+            background: #eff6ff;
+            border-left: 5px solid #2563eb;
+            border-radius: 8px;
+        }
+
+        .result h3 {
+            color: #64748b;
+            font-size: 15px;
+            margin-bottom: 8px;
+        }
+
+        .nickname {
+            color: #1d4ed8;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            color: #64748b;
+            font-size: 14px;
+            margin-top: 30px;
+            padding-bottom: 30px;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 28px;
+            }
+
+            .card {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>🌏 Atlas Nicknames</h1>
+        <p>Discover the nicknames of Southeast Asian countries</p>
+    </header>
+
+    <main class="container">
+        <section class="card">
+
+            <h2>Explore Southeast Asia</h2>
+
+            <p class="description">
+                Select a country below to discover its famous nickname.
+            </p>
+
+            <form method="POST">
+
+                <label for="country">Choose a country:</label>
+
+                <select id="country" name="country" required>
+                    <option value="">-- Select a country --</option>
+
+                    { for country in countries }
+                        <option value="{{ country }}"
+                            {% if country == selected_country %}
+                                selected
+                            {% endif %}>
+                        </option>
+                </select>
+
+                <button type="submit">
+                    Show Nickname
+                </button>
+
+            </form>
+
+                <div class="result">
+                    <h3>selected_country is known as</h3>
+                    <p class="nickname">nickname</p>
+                </div>
+
+        </section>
+
+        <footer>
+            <p>ICT 10 - Alminario, Prinze</p>
+        </footer>
+    </main>
+
+</body>
+</html>
